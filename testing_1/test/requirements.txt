@@ -1,0 +1,13 @@
+celery
+celery[redis]
+PyPDF2
+chromadb
+langchain_community
+langchain
+sentence-transformers
+apscheduler
+schedule
+python-multipart
+sqlalchemy
+shareplum
+Office365-REST-Python-Client
