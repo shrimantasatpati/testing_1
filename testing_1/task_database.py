@@ -1,3 +1,65 @@
+
+
+
+# from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime
+# from sqlalchemy.orm import declarative_base, sessionmaker
+# from datetime import datetime
+
+# Base = declarative_base()
+# class Response(Base):
+#     __tablename__ = 'tasks'
+
+#     id = Column(Integer, primary_key=True)
+#     task_id = Column(String)
+#     status = Column(String)
+#     time = Column(DateTime)
+#     collection_name = Column(String)
+#     uploads_dir = Column(String)
+#     file_name = Column(String)
+#     # result = Column(Text)
+#     # successful = Column(Integer)
+
+# engine = create_engine('sqlite:///task.db', echo=True)
+# Base.metadata.create_all(bind=engine)
+# Session = sessionmaker(bind=engine)
+
+# def store_responses(responses):
+#     session = Session()
+#     for response in responses:
+#         db_response = Response(
+#             task_id=response['task_id'],
+#             status=response['status'],
+#             time=response['time'],
+#             collection_name=response['collection_name'],
+#             uploads_dir=response['uploads_dir'],
+#             file_name=response['file_name'],
+#             # result=str(response['result']),
+#             # successful=int(response['successful'])
+#         )
+#         session.add(db_response)
+#     session.commit()
+#     session.close()
+
+# def get_responses_from_db():
+#     session = Session()
+#     responses = session.query(Response).all()
+#     session.close()
+#     return [
+#         {
+#             'id': response.id,
+#             'task_id': response.task_id,
+#             'status': response.status,
+#             'time': response.time.isoformat() if response.time else None,
+#             'collection_name': response.collection_name,
+#             'uploads_dir': response.uploads_dir,
+#             'file_name': response.file_name,
+#             # 'result': response.result,
+#             # 'successful': bool(response.successful)
+#         }
+#         for response in responses
+#     ]
+
+
 from datetime import datetime
 from pymongo import MongoClient
 
